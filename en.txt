@@ -1,0 +1,101 @@
+UNIX QUICK REFERENCE
+
+=== NAVIGATION ===
+pwd                  - Print current directory
+ls                   - List files and directories
+ls -la               - List all files with details
+cd DIR               - Change directory
+cd ..                - Go to parent directory
+cd ~                 - Go to home directory
+
+=== FILES AND DIRECTORIES ===
+touch FILE           - Create empty file / update timestamp
+mkdir DIR            - Create directory
+mkdir -p A/B         - Create nested directories
+cp A B               - Copy file A to B
+cp -r A B            - Copy directory A to B
+mv A B               - Move or rename file
+rm FILE              - Remove file
+rm -r DIR            - Remove directory recursively
+rmdir DIR            - Remove empty directory
+file FILE            - Identify file type
+stat FILE            - Display file metadata
+find . -name '*.txt' - Find text files recursively
+
+=== VIEWING AND SEARCHING ===
+cat FILE             - Print file contents
+less FILE            - View file page by page
+head FILE            - Show first 10 lines
+tail FILE            - Show last 10 lines
+grep 'word' FILE     - Find matching lines
+grep -n 'word' FILE  - Show matching line numbers
+wc -l FILE           - Count lines
+sort FILE            - Sort lines
+uniq FILE            - Remove adjacent duplicate lines
+
+=== REDIRECTION AND PIPES ===
+echo hello > a.txt   - Write output (overwrite)
+echo hello >> a.txt  - Append output
+command < FILE       - Read input from file
+command 2> err.txt   - Redirect errors
+ls | grep '.txt'     - Pipe output to another command
+
+=== PERMISSIONS AND LINKS ===
+ls -l                - Display file permissions
+chmod 755 FILE       - Set rwxr-xr-x
+chmod 644 FILE       - Set rw-r--r--
+chmod u+x FILE       - Add execute permission for owner
+chgrp GROUP FILE     - Change file group
+ln A B               - Create hard link
+ln -s TARGET LINK    - Create symbolic link
+id                   - Show user and group IDs
+groups               - Show group memberships
+umask                - Show permission mask
+
+=== PROCESSES ===
+ps                   - Show processes in current terminal
+ps aux               - Show processes for all users
+ps -u USER           - Show processes belonging to user
+ps -ef               - Show all processes with details
+pstree               - Display process tree
+kill -STOP PID       - Suspend process
+kill -CONT PID       - Resume process
+kill -TERM PID       - Request termination
+command &            - Start in background
+jobs                 - List shell jobs
+fg                   - Bring job to foreground
+bg                   - Resume stopped job in background
+
+=== ENVIRONMENT ===
+echo $PATH           - Display executable search path
+export VAR=value     - Export variable
+export PATH="$PATH:." - Add current directory to PATH
+env                  - Display environment variables
+which COMMAND        - Find executable in PATH
+date                 - Display current date and time
+date -d '12/24'      - Parse December 24
+df -h                - Show filesystem disk space
+du -sh DIR           - Show directory disk usage
+
+=== HELP ===
+man COMMAND          - Open manual page
+COMMAND --help       - Show help (if supported)
+help COMMAND         - Help for Bash built-ins
+whatis COMMAND       - Show short description
+apropos KEYWORD      - Search manual descriptions
+
+=== IMPORTANT NOTES ===
+.                    - Current directory
+..                   - Parent directory
+~                    - Home directory
+*                    - Filename wildcard
+?                    - Single-character filename wildcard
+>                    - Overwrite output
+>>                   - Append output
+|                    - Pipe to next command
+&&                   - Run next command if previous succeeds
+Ctrl+C               - Interrupt foreground process
+Ctrl+Z               - Suspend foreground process
+Ctrl+D               - Send EOF / exit interactive shell
+755                  - rwxr-xr-x
+644                  - rw-r--r--
